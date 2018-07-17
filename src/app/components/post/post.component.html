@@ -1,11 +1,9 @@
-<ul>
-  <li>{{data.title}}</li>
-  <li>{{data.content}}</li>
-  <li>{{data.created_at}}</li>
-  <li>{{data.id}}</li>
-  <li>{{data.image_url}}</li>
-  <li>{{data.lat}}</li>
-  <li>{{data.long}}</li>
-  <li>{{data.title}}</li>
-  <li>{{data.updated_at}}</li>
-</ul>
+<div>
+  <h1 class="post-title">{{data.title}}</h1>
+  <ul class="post-info">
+    <li>{{data.content}}</li>
+    <li><img src="{{data.image_url}}" width="200"></li>
+    <li>Created at: {{data.created_at | date}}</li>
+    <li>Updated at: {{data.updated_at | date}}</li>
+  </ul>
+</div>
