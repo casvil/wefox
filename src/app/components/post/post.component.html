@@ -1,5 +1,6 @@
 <div>
-  <h1 class="post-title">{{data.title}}</h1>
+  <!-- <h1 class="post-title"></h1> -->
+  <a routerLink="{{'/post/' + data.id}}">{{data.title}}</a>
   <ul class="post-info">
     <li>{{data.content}}</li>
     <li><img src="{{data.image_url}}" width="200"></li>
