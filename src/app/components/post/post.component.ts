@@ -24,7 +24,9 @@ export class PostComponent implements OnInit {
       const postId = pathValues[pathValues.length - 1]; // the id is in the last position of the array
 
       // after finding the id of the selected post -> look for the post object of the parent array of posts
-      this.data = this.parent.posts.filter(post => post.id == postId)[0];
+      this.parent.postsSubscription$.subscribe(
+        posts => (this.data = posts.filter(post => post.id == postId)[0])
+      );
     }
   }
 }

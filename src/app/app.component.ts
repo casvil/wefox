@@ -12,7 +12,7 @@ import { Post } from './models/api/api.models';
 })
 export class AppComponent implements OnInit {
   postsSubscription$: Observable<any>;
-  public posts: any;
+  posts: any;
 
   constructor(private apiService: ApiService) {}
 
