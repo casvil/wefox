@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { Observable } from 'rxjs';
 
 import { ApiService } from './api.service';
+import { Post } from './models/api/api.models';
 
 @Component({
   selector: 'app-root',
@@ -10,14 +11,12 @@ import { ApiService } from './api.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  postsSubscription$: Subscription;
-  posts: any;
+  postsSubscription$: Observable<any>;
+  public posts: any;
 
   constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    this.postsSubscription$ = this.apiService
-      .getPosts()
-      .subscribe((res: Response) => (this.posts = res));
+    this.postsSubscription$ = this.apiService.getPosts();
   }
 }
